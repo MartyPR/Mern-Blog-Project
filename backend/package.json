@@ -1,13 +1,16 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project about blog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "server": "node --watch server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "api","mongoose","express"
+  ],
+  "author": "MartyPR",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2"
