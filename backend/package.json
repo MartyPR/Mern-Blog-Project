@@ -8,11 +8,14 @@
     "server": "node --watch server.js"
   },
   "keywords": [
-    "api","mongoose","express"
+    "api",
+    "mongoose",
+    "express"
   ],
   "author": "MartyPR",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongoose": "^8.5.2"
   }
 }
