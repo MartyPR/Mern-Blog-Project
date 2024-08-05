@@ -2,9 +2,13 @@
 
 const postModel = require("../../models/Post/Post");
 
+
+
 const CreatePost = async (req, res) => {
   try {
     const postData = req.body;
+    console.log(postData);
+    
     const postCreated = await postModel.create(postData);
 
     res.json({
@@ -12,6 +16,7 @@ const CreatePost = async (req, res) => {
       message: "Post created successfully",
       postCreated,
     });
+
   } catch (error) {
     res.json(error);
   }
@@ -31,3 +36,5 @@ const listPosts = async (req, res) => {
     res.json(error);
   }
 };
+
+module.exports={CreatePost}
