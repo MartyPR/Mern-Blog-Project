@@ -1,4 +1,8 @@
 const express = require("express");
+const connectDB = require("./utils/connectDB");
+const dotenv = require("dotenv").config();
+//call the DB
+connectDB();
 
 const app = express();
 
@@ -10,8 +14,5 @@ app.use(express.json());
 
 //!Routes
 
-
 //! Run SERVER
 app.listen(PORT, console.log(`The server is running in ${PORT}`));
-
-
