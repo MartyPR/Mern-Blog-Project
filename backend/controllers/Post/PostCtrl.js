@@ -24,17 +24,16 @@ const CreatePost = async (req, res) => {
 //ListPost
 const listPosts = async (req, res) => {
   try {
-    const postData = req.body;
-    const postCreated = await postModel.create(postData);
+    const postList = await postModel.find();
 
     res.json({
       status: "success",
-      message: "cPost created successfully",
-      postCreated,
+      message: "Post List successfully",
+      postList,
     });
   } catch (error) {
     res.json(error);
   }
 };
 
-module.exports={CreatePost}
+module.exports={CreatePost, listPosts}
