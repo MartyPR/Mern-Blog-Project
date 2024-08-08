@@ -1,9 +1,18 @@
-const express =require('express');
-const { CreatePost, listPosts } = require('../../controllers/Post/PostCtrl');
+const express = require("express");
+const {
+  CreatePost,
+  listPosts,
+  updatePost,
+  postDetail,
+  deletePost,
+} = require("../../controllers/Post/PostCtrl");
 
-const postRoute= express.Router();
+const postRoute = express.Router();
 
-postRoute.post('/create',CreatePost);
-postRoute.get('/list',listPosts);
+postRoute.post("/create", CreatePost);
+postRoute.get("/list", listPosts);
+postRoute.get("/:postId", postDetail);
+postRoute.put("/:postId", updatePost);
+postRoute.delete("/:postId", deletePost);
 
-module.exports= postRoute
+module.exports = postRoute;
