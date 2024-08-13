@@ -8,13 +8,13 @@ const PostDetails = () => {
   //!use Query
   const { data, isError, isLoading, error, isSuccess } = useQuery({
     queryFn: () => postDetails(postId),
-    queryKey: ["postDetails"],
+    queryKey: ["post-Details"],
   });
 
   const navigate = useNavigate();
   const { mutateAsync } = useMutation({
     mutationFn: deletePost,
-    mutationKey: ["Post-deleted"],
+    mutationKey: ["post-delete"],
   });
 
   const handleDelete = (id) => {
@@ -35,12 +35,11 @@ const PostDetails = () => {
         <h2>{data?.postFound.title}</h2>
         <p>{data?.postFound.description}</p>
         <Link to={`/posts/${postId}`}>Update</Link>
-        <button onClick={()=>handleDelete(postId)}>Delete</button>
+        <button onClick={() => handleDelete(postId)}>Delete</button>
       </div>
     </div>
   );
 
-  return <div>PostDetails</div>;
 };
 
 export default PostDetails;
