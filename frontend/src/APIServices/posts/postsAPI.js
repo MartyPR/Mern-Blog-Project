@@ -42,17 +42,17 @@ export const postDetails = async (postId) => {
     const response = await axios.get(
       `http://localhost:5000/api/v1/post/${postId}`
     );
-    console.log("Response from backend:", response.data);
     if (response.status !== 200) {
       throw new Error("Failed to create payment intent");
     }
-
+    console.log("Response from backend:", response.data);
     return response.data;
   } catch (error) {
     console.error("Error in createStripePayment:", error);
     throw error;
   }
 };
+
 export const updatePost = async (postData) => {
   try {
     const response = await axios.put(
@@ -67,6 +67,23 @@ export const updatePost = async (postData) => {
       throw new Error("Failed to create payment intent");
     }
 
+    return response.data;
+  } catch (error) {
+    console.error("Error in createStripePayment:", error);
+    throw error;
+  }
+};
+
+export const deletePost = async (postId) => {
+  try {
+    const response = await axios.delete(
+      `http://localhost:5000/api/v1/post/${postId}`
+    );
+
+    if (response.status !== 200) {
+      throw new Error("Failed to create payment intent");
+    }
+    console.log("Response from backend:", response.data);
     return response.data;
   } catch (error) {
     console.error("Error in createStripePayment:", error);

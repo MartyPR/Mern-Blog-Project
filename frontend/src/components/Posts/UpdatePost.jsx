@@ -14,7 +14,7 @@ const UpdatePost = () => {
     error,
   } = useQuery({
     queryFn: () => postDetails(postId),
-    queryKey: ["UpdatePost"],
+    queryKey: ["postDetails"],
   });
 
   //Post mutation

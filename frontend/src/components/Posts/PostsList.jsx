@@ -19,7 +19,7 @@ const PostsList = () => {
           <div key={post._id}>
             <h2>{post?.title}</h2>
             <p>{post?.description}</p>
-            <Link to={`/posts/${post._id}`} >more...</Link>
+            <Link to={`/postDetails/${post._id}`} >more...</Link>
           </div>
         );
       })}
