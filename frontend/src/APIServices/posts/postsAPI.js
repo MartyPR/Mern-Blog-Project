@@ -7,7 +7,7 @@ export const createPost = async (data) => {
     const response = await axios.post(
       "http://localhost:5000/api/v1/post/create",
       {
-        title: data.title,
+        // title: data.title,
         description: data.description,
       }
     );

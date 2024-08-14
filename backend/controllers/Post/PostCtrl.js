@@ -4,9 +4,10 @@ const asyncHandler = require("express-async-handler");
 const postModel = require("../../models/Post/Post");
 
 const CreatePost = asyncHandler(async (req, res) => {
-  const { title, description } = req.body;
+  const {  description } = req.body;
+  // title,
 
-  const postCreated = await postModel.create({ title, description });
+  const postCreated = await postModel.create({ description });
 
   res.json({
     status: "success",

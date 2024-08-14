@@ -3,7 +3,7 @@ const connectDB = require("./utils/connectDB");
 const postRoute = require("./routes/Post/PostRoute");
 const dotenv = require("dotenv").config();
 const cors = require("cors");
-const errorHandler = require("./middlewares/ErrorHandlerMiddlewares");
+const {errorHandler, NotFound} = require("./middlewares/ErrorHandlerMiddlewares");
 //call the DB
 connectDB();
 
@@ -18,7 +18,7 @@ app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 //!Error handling middleware
 app.use(errorHandler);
-
+app.use(NotFound);
 //!Routes
 app.use("/api/v1/post", postRoute);
 

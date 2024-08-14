@@ -7,4 +7,9 @@ const errorHandler = (err, req, res, next) => {
   });
 };
 
-module.exports = errorHandler;
+const NotFound= (req,res,next)=>{
+  // res.status(404).json({message:'Route not found on our server'})
+  next();
+}
+
+module.exports = {errorHandler,NotFound};
