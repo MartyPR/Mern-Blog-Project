@@ -8,7 +8,6 @@ const CreatePost = asyncHandler(async (req, res) => {
   // title,
 
   const postCreated = await postModel.create({ description });
-
   res.json({
     status: "success",
     message: "Post created successfully",
